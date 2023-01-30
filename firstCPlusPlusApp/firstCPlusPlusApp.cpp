@@ -147,7 +147,7 @@ int q7() {
 
 int q8() {
 	int* p = new int[6];
-	std::cout << "Enter 6 integers: " << std::endl;
+	std::cout << "Enter 6 integers (press enter after each integer): " << std::endl;
 	for (int i = 0; i < 6; i++) {
 		std::cin >> p[i];
 	}
