@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <limits>
 #include <numbers>
+#include <cmath>
 
 using namespace std;
 
@@ -34,22 +35,21 @@ int q1() {
 
 int q2() {
 	
-	
 	long double pi = 3.141592653589793238;
 
 	std::string userInput;
 	std::cout << "Enter the circle's radius: ";
 	std::getline(std::cin, userInput);
-	std::cout << "Circle Radius: " << userInput << std::endl;
-
 	int radius = stringToInt(userInput);
+	std::cout << "Circle Radius: " << userInput << std::endl;
+	std::cout << "Enter the desired answer precision: ";
+	std::getline(std::cin, userInput);
+	int precision = stringToInt(userInput);
+	std::cout << "Answer recision: " << userInput << std::endl;
 
-	double area;
-
-	area = pi * radius * radius;
-
-	cout << "My circle with radius " << radius << " has an area equals to " << area << std::endl;
-
+	long double area = pi * pow(radius, 2);
+	std::cout.precision(precision);
+	std::cout << "The area of the circle is " << std::fixed << area << std::endl;
 	return 0;
 }
 
@@ -174,7 +174,7 @@ int main() {
 			q1();
 		}
 		else {
-			std::cout << "Please type a valid response..." << std::endl;
+			//std::cout << "Please type a valid response..." << std::endl;
 		}
 	}
 	return 0;
