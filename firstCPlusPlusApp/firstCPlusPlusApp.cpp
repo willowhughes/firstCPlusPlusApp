@@ -145,6 +145,22 @@ int q7() {
 	//My function works as expected
 }
 
+int q8() {
+	int* p = new int[6];
+	std::cout << "Enter 6 integers: " << std::endl;
+	for (int i = 0; i < 6; i++) {
+		std::cin >> p[i];
+	}
+	std::cout << "Integers in reverse order: " << std::endl;
+	for (int i = 5; i >= 0; i--) {
+		std::cout << p[i] << " ";
+	}
+	std::cout << std::endl;
+
+	delete[] p;
+	return 0;
+}
+
 int main() {
 
 	std::string userInput;
@@ -171,7 +187,7 @@ int main() {
 		} if (i == 7) {
 			q7();
 		} if (i == 8) {
-			q1();
+			q8();
 		}
 		else {
 			//std::cout << "Please type a valid response..." << std::endl;
